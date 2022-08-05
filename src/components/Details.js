@@ -3,26 +3,30 @@ import { useState,useEffect } from "react";
 import { Link,useParams } from "react-router-dom";
 import { Row,Col,Image,ListGroup } from "react-bootstrap";
 import './Details.css'
+import { useDispatch, useSelector } from "react-redux";
 
 function Details() {
 
-  const [hotels, setHotels] = useState([])
+  // const [hotels, setHotels] = useState([])
 
 
   const {id} = useParams()
 
+  const {hotels} = useSelector((state) => state.hotelsList);
 
-  useEffect(() => {
-    const fetchDAta=async()=>{
 
-        await fetch('/products.json')
-        .then((res)=>res.json())
-        .then((data)=>setHotels(data.products))
-    }
 
-    fetchDAta()
+//   useEffect(() => {
+//     const fetchDAta=async()=>{
+
+//         await fetch('/products.json')
+//         .then((res)=>res.json())
+//         .then((data)=>setHotels(data.products))
+//     }
+
+//     fetchDAta()
  
-}, [])
+// }, [])
 
   console.log("hotels",hotels);
   console.log("name",hotels[id-1]);

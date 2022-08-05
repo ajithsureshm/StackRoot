@@ -9,15 +9,15 @@ function Body() {
 
   const dispatch = useDispatch();
 
-  const products = useSelector((state) => state.hotelsList);
+  const {hotels} = useSelector((state) => state.hotelsList);
 
   // const {resturant}=products // destructing
 
   // console.log("hotels",resturant);
 
-  console.log("hotels", products.hotels);
+  // console.log("hotels", products.hotels);
 
-  const resturant = products.hotels;
+  // const resturant = products.hotels;
 
   useEffect(() => {
     dispatch(listHotels());
@@ -39,7 +39,7 @@ function Body() {
 
   return (
     <Row>
-      {resturant.map((item) => (
+      {hotels.map((item) => (
         <Col sm={12} md={8} lg={6} xl={3}>
           <ProductCard data={item} />
         </Col>

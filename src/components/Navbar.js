@@ -66,7 +66,7 @@ function Navbarr() {
             </Nav.Link>
 
             {user ? (
-              <NavDropdown title={user.data.user.fullname}>
+              <NavDropdown title={`haiiiii  ${user.data.user.fullname}`}>
                 <NavDropdown.Item
                   onClick={() => {
                     handleSignOut();
